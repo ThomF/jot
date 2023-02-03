@@ -18,8 +18,8 @@ export class Jot{
         <div class="col-6">
             <h2>${this.title}</h2>
         </div>
-        <div class="col-6" style="color: ${this.color}">
-        <p class="mdi mdi-file" ></p>
+        <div class="col-6">
+        <h4 class="mdi mdi-file" style="color: ${this.color}"></h4>
         </div>
         </div>
         `
