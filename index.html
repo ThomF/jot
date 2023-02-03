@@ -15,7 +15,25 @@
   <title>jot</title>
 </head>
 
-<body>
+<style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
+<body class="debug">
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
       <a class="navbar-brand ms-3" href="#">
@@ -30,7 +48,7 @@
     </nav>
   </header>
   <main class="">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-12">
           <!-- <div>
@@ -41,10 +59,15 @@
               </div>
             </form>
           </div> -->
+          <div class="row text-light" id="take-notes">
 
-          <div class="row" id="take-notes">
-
-
+            <div class="col-3">
+              <h2></h2>
+            </div>
+            <div class="col-7">
+              <textarea name="body" id="text" cols="74" rows="25"></textarea>
+            </div>
+            <div class="col-2 mdi mdi-delete">DELETE</div>
 
           </div>
         </div>
@@ -59,7 +82,7 @@
 
   <!-- SECTION OFFCANVAS -->
 
-  <div class="offcanvas offcanvas-end" id="jotNote" aria-labelledby="listingFormLabel">
+  <div class="offcanvas offcanvas-start" id="jotNote" aria-labelledby="listingFormLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="jotLabel">new jot</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
