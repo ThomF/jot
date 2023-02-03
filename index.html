@@ -65,9 +65,12 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <form onsubmit="app.JotsController.handleJotSubmit()">
-      <div class="form-floating mb-3">
+      <div class="form-floating mb-3 p-2">
         <input type="text" class="form-control" name="title" id="jotTitle" required>
         <label for="jotTitle">TITLE</label>
+      </div>
+      <div class="form-floating p-2">
+        <input type="color" class="form-control" name="color" value="#0000ff">
       </div>
     </form>
     <div class="offcanvas-body" id="allJotNotes">
