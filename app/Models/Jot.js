@@ -13,16 +13,23 @@ export class Jot{
     // SECTION templates 
 
     get JotFileTemplate(){
-        return
-        `
-        <div>${this.title}</div>
+        return /** HTML*/`
+        <div class="row" onclick="app.JotsController.setActiveJot('${this.id}')">
+        <div class="col-6">
+            <h2>${this.title}</h2>
+        </div>
+        <div class="col-6" style="color: ${this.color}">
+        <p class="mdi mdi-file" ></p>
+        </div>
+        </div>
         `
     }
 
     get JotNoteTemplate(){
-        return
-        `
-
+        return/** HTML*/`
+        <div>
+        ${this.title}
+        </div>
         `
     }
 

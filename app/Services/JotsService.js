@@ -18,7 +18,7 @@ class JotsService{
         console.log(newJot, 'adding it!')
         Pop.toast("success")
         appState.jots.push(newJot)
-        saveState('allJotNotes', appState.jots)
+        saveState('jots', appState.jots)
         appState.emit('jots')
     }
 

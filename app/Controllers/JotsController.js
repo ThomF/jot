@@ -13,6 +13,11 @@ function _drawJotNotes(){
     setHTML('allJotNotes', template)
 }
 
+function _drawJotNote(){
+    let jotNote = appState.activeJot
+    setHTML('take-notes', jotNote.JotNoteTemplate)
+}
+
 
 export class JotsController{
 
@@ -20,6 +25,7 @@ export class JotsController{
     constructor(){
         _drawJotNotes()
         appState.on('jots', _drawJotNotes)
+        appState.on('activeJot', _drawJotNote)
     }
 
 
@@ -37,6 +43,15 @@ export class JotsController{
         } catch (error) {
             Pop.error(error.message)
             console.log(error)
+        }
+    }
+
+    setActiveJot(jotId){
+        console.log('set active')
+        try {
+            jotsService.setActiveJot(jotId)
+        } catch (error) {
+            console.log('failed to set active jot')            
         }
     }
 
