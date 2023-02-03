@@ -10,7 +10,7 @@ function _drawJotNotes(){
     let jotNotes = appState.jots
     let template = ''
     jotNotes.forEach(c => template += c.JotFileTemplate)
-    setText('app', template)
+    setHTML('allJotNotes', template)
 }
 
 
@@ -19,7 +19,7 @@ export class JotsController{
 
     constructor(){
         _drawJotNotes()
-        appState.on('app', _drawJotNotes)
+        appState.on('jots', _drawJotNotes)
     }
 
 
