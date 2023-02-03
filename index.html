@@ -23,13 +23,27 @@
           loading="lazy">
         <span class="ms-2">jot</span>
       </a>
+      <div class="text-end flex-grow-1 me-3">
+        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#jotNote"
+          aria-controls="jotForm" id="add-jot-button">NEW JOT</button>
+      </div>
     </nav>
   </header>
   <main>
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div id="app"></div>
+          <div>
+            <form onsubmit="app.JotsController.handleJotSubmit()">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="jot" required>
+                <label for="jot">TITLE</label>
+              </div>
+            </form>
+          </div>
+          <div id="app">
+            <span id="test"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -39,6 +53,24 @@
       <p><small>Made with 💖 by CodeWorks</small></p>
     </div>
   </footer>
+
+  <!-- SECTION OFFCANVAS -->
+
+  <div class="offcanvas offcanvas-end" id="jotNote" aria-labelledby="listingFormLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="jotLabel">new jot</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="jotNotes">
+    </div>
+    <div class="offcanvas-body" id="allJotNotes">
+
+
+
+
+
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

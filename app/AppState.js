@@ -1,3 +1,4 @@
+import { Jot } from "./Models/Jot.js"
 import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
@@ -5,7 +6,14 @@ import { loadState } from "./Utils/Store.js"
 
 class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
-  values = loadState('values', [Value])
+  // values = loadState('values', [Value])
+
+  /** @type {import('./Models/Jot').Jot[]} */
+  jots = loadState('jots', [Jot])
+
+  /** @type {import('./Models/Jot').Jot|null} */
+  activeJot = null
+
 }
 
 export const appState = new Proxy(new AppState(), {

@@ -1,5 +1,5 @@
-import { generateId } from "../Utils/generateId"
-
+import { generateId } from "../Utils/generateId.js"
+import { appState } from "../AppState.js"
 
 export class Jot{
     constructor(data){
@@ -15,14 +15,14 @@ export class Jot{
     get JotFileTemplate(){
         return
         `
-
+        <div>${this.title}</div>
         `
     }
 
     get JotNoteTemplate(){
         return
         `
-        
+
         `
     }
 
