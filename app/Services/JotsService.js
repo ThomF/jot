@@ -5,7 +5,12 @@ import { Pop } from "../Utils/Pop.js";
 import { setHTML, setText } from "../Utils/Writer.js";
 
 class JotsService{
+    counter() {
+        let jotCount = appState.jots.length;
 
+        setText('numberJot', jotCount)
+
+    }
 
     updateJot(updatedBody) {
         console.log("almost saved")
