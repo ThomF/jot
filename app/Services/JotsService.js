@@ -5,6 +5,17 @@ import { Pop } from "../Utils/Pop.js";
 
 class JotsService{
 
+    updateJot(updatedBody) {
+        console.log("almost saved")
+        let activeJotNote = appState.activeJot
+
+        // @ts-ignore
+        activeJotNote.body = updatedBody
+        saveState('jots', appState.jots)
+        console.log("text updated!", appState.jots)
+        appState.emit('activeJot')
+    }
+
 
     setActiveJot(jotId){
         let foundJot = appState.jots.find(c => c.id == jotId)

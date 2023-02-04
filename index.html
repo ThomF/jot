@@ -15,7 +15,7 @@
   <title>jot</title>
 </head>
 
-<style>
+<!-- <style>
   body.debug .container,
   body.debug .container-fluid {
     outline: 2px double blue;
@@ -31,11 +31,11 @@
     outline: 2px dotted forestgreen;
     outline-offset: -3px;
   }
-</style>
+</style> -->
 
 <body class="debug">
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+    <nav class="navbar navbar-dark navbar-expands text-light no-select">
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
@@ -59,24 +59,30 @@
               </div>
             </form>
           </div> -->
-          <div class="row text-light" id="take-notes">
+          <div class="row text-light pt-4" id="take-notes">
 
-            <div class="col-3">
-              <h2></h2>
-            </div>
-            <div class="col-7">
-              <textarea name="body" id="text" cols="74" rows="25"></textarea>
-            </div>
-            <div class="col-2 mdi mdi-delete">DELETE</div>
+            <!-- <div class="row rounded border border-${this.color}">
+              <div class="col-3 pt-4">
+                <h1>JOT NOTE</h1>
+                <p>TIME</p>
+                <p>UPDATED</p>
+              </div>
+              <div class="col-7 p-4">
+                <textarea name="body" id="text" cols="74" rows="20"></textarea>
+              </div>
+              <div class="col-2 mdi mdi-delete pt-4">DELETE</div>
+            </div> -->
+
 
           </div>
         </div>
       </div>
     </div>
   </main>
-  <footer class="bg-dark text-light">
+  <footer class="text-light">
     <div class="text-center no-select">
-      <p><small>Made with 💖 by CodeWorks</small></p>
+      <img class="signature" src="assets/img/signature.png" alt="">
+      <!-- <p><small>Made with 💖 by CodeWorks</small></p> -->
     </div>
   </footer>
 

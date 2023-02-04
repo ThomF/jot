@@ -1,5 +1,24 @@
 /* BASIC STYLES HERE */
 main{
-    background: rgb(4, 41, 68)
-    ;
+    background: hsla(186, 38%, 85%, 1);
+
+    background: linear-gradient(90deg, hsla(186, 38%, 85%, 1) 0%, hsla(207, 76%, 13%, 1) 100%);
+    
+    background: -moz-linear-gradient(90deg, hsla(186, 38%, 85%, 1) 0%, hsla(207, 76%, 13%, 1) 100%);
+    
+    background: -webkit-linear-gradient(90deg, hsla(186, 38%, 85%, 1) 0%, hsla(207, 76%, 13%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C9E4E7", endColorstr="#08253C", GradientType=1 );
+}
+header{
+    background-color:  #0D2336;
+}
+footer{
+    background-color: #c8e5e8;
+    text-shadow: #0D2336 1px 0 50px;
+}
+
+.signature{
+    height: auto;
+    width: 300px;
 }

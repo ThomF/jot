@@ -55,7 +55,21 @@ export class JotsController{
         }
     }
 
+    updatedJot(){
+        try {
+            let textBody = document.getElementById('text')
+            // @ts-ignore
+            let updatedBody = textBody.value 
 
+            console.log('Saving ->', updatedBody)
+            jotsService.updateJot(updatedBody)
+            
+        } catch (error) {
+            console.error(error.message)
+            Pop.error(error.message)
+            
+        }
+    }
 
 
     
