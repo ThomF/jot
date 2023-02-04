@@ -38,7 +38,7 @@
     <nav class="navbar navbar-dark navbar-expands text-light no-select">
       <a class="navbar-brand ms-3" href="#">
         <img class="nav-img" src="assets/img/signature (4).png" height="45" alt="" loading="lazy">
-        <span class="ms-2">jot</span>
+        <span class="ms-2"></span>
       </a>
       <div class="text-end flex-grow-1 me-3">
         <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#jotNote"
@@ -60,23 +60,14 @@
           </div> -->
           <div class="row text-light pt-4" id="take-notes">
 
-            <!-- <div class="row rounded border border-${this.color}">
-              <div class="col-3 pt-4">
-                <h1>JOT NOTE</h1>
-                <p>TIME</p>
-                <p>UPDATED</p>
+            <div class="row rounded blink" id="homeScreen">
+              <div class="col-12">
+                <img class="imgJot" src="assets/img/signature (6).png" alt="">
               </div>
-              <div class="col-7 p-4">
-                <textarea name="body" id="text" cols="74" rows="20"></textarea>
-              </div>
-              <div class="col-2 mdi mdi-delete pt-4">DELETE</div>
-            </div> -->
-
-
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </main>
   <footer class="text-light">
     <div class="text-center no-select">
@@ -87,18 +78,23 @@
 
   <!-- SECTION OFFCANVAS -->
 
-  <div class="offcanvas offcanvas-start" id="jotNote" aria-labelledby="listingFormLabel">
+  <div class="offcanvas offcanvas-start newJotbg text-light" id="jotNote" aria-labelledby="listingFormLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="jotLabel">new jot</h5>
+      <h5 class="offcanvas-title" id="jotLabel">Jots <span id="numberJot"></span></h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <form onsubmit="app.JotsController.handleJotSubmit()">
       <div class="form-floating mb-3 p-2">
-        <input type="text" class="form-control" name="title" id="jotTitle" required>
-        <label for="jotTitle">TITLE</label>
-      </div>
-      <div class="form-floating p-2">
-        <input type="color" class="form-control" name="color" value="#0000ff">
+        <div class="row">
+          <div class="col-9">
+            <label for="jotTitle">TITLE</label>
+            <input type="text" class="form-control" name="title" id="jotTitle" required>
+          </div>
+          <div class="col-3">
+            <label for="jotColor">Color</label>
+            <input type="color" class="form-control form-control-color" name="color" value="#0000ff">
+          </div>
+        </div>
       </div>
     </form>
     <div class="offcanvas-body" id="allJotNotes">

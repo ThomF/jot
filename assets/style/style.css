@@ -2,20 +2,24 @@
 main{
     background: hsla(186, 38%, 85%, 1);
 
-    background: linear-gradient(90deg, hsla(186, 38%, 85%, 1) 0%, hsla(207, 76%, 13%, 1) 100%);
+    background: linear-gradient(90deg, #cae4e7 0%, hsla(207, 76%, 13%, 1) 100%);
     
     background: -moz-linear-gradient(90deg, hsla(186, 38%, 85%, 1) 0%, hsla(207, 76%, 13%, 1) 100%);
     
-    background: -webkit-linear-gradient(90deg, hsla(186, 38%, 85%, 1) 0%, hsla(207, 76%, 13%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(186, 38%, 85%, 1) 0%, #08243a 100%);
     
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C9E4E7", endColorstr="#08253C", GradientType=1 );
 }
 header{
-    background-color:  #0D2336;
+    background-color:  #0d2237;
 }
 footer{
     background-color: #c8e5e8;
     text-shadow: #0D2336 1px 0 50px;
+}
+
+.newJotbg{
+    background-color:  #0D2336;
 }
 
 .signature{
@@ -26,3 +30,36 @@ footer{
 .nav-img{
     height: 70px;
 }
+
+#homeScreen{
+height: 25rem;
+}
+.imgJot{
+    padding-left: 12rem;
+    padding-top: 5rem;
+}
+.blink{
+    border:.01px solid black;
+    animation: blink 10s infinite;
+  }
+  @keyframes blink{
+    0% {
+      border-color: #cae4e7;
+    }
+    20% {
+      border-color: #08243a;
+    }
+    40% {
+      border-color: #cae4e7;
+    }
+    60% {
+      border-color: #08243a;
+    }
+    80% {
+      border-color: #cae4e7;
+    }
+    100% {
+      border-color: #08243a;
+    }
+  }
+  

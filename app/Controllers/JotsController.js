@@ -1,9 +1,9 @@
 import { appState } from "../AppState.js"
-import { Jot } from "../Models/Jot.js";
 import { jotsService } from "../Services/JotsService.js";
 
 import { getFormData } from "../Utils/FormHandler.js";
 import { Pop } from "../Utils/Pop.js";
+import { saveState } from "../Utils/Store.js";
 import { setHTML, setText } from "../Utils/Writer.js";
 
 function _drawJotNotes(){
@@ -40,6 +40,7 @@ export class JotsController{
 
             // @ts-ignore
             form.reset()
+            jotsService.counter()
         } catch (error) {
             Pop.error(error.message)
             console.log(error)
@@ -71,6 +72,16 @@ export class JotsController{
         }
     }
 
+    async deleteNote(jotId){
+        try {
+            const yes = await Pop.confirm('You Cant Undo this Exile')
+            if(!yes) { return }
 
+            jotsService.deleteNote(jotId)
+        } catch (error) {
+            Pop.error(error)
+        }
+    }
+        
     
 }
