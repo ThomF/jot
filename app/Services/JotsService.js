@@ -5,12 +5,7 @@ import { Pop } from "../Utils/Pop.js";
 import { setHTML, setText } from "../Utils/Writer.js";
 
 class JotsService{
-    counter() {
-        let jotCount = appState.jots.length;
 
-        setText('numberJot', jotCount)
-
-    }
 
     updateJot(updatedBody) {
         console.log("almost saved")
@@ -21,6 +16,7 @@ class JotsService{
         activeJotNote.body = updatedBody
         activeJotNote.upTime = new Date().toLocaleTimeString('en-US') 
         activeJotNote.upDate = new Date().toLocaleDateString('en-US')
+        activeJotNote.body
         saveState('jots', appState.jots)
         console.log("text updated!", appState.jots)
         appState.emit('activeJot')

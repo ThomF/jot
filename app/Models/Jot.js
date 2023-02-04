@@ -11,6 +11,8 @@ export class Jot{
         this.upDate =  data.upDate || ""
         this.body = data.body || ''
         this.color = data.color
+        this.word = data.word || ''
+        this.character = data.character || ''
         
     }
 
