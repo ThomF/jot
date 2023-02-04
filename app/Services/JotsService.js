@@ -2,22 +2,25 @@ import { Jot } from "../Models/Jot.js";
 import { appState } from "../AppState.js";
 import { saveState } from "../Utils/Store.js";
 import { Pop } from "../Utils/Pop.js";
-import { setText } from "../Utils/Writer.js";
+import { setHTML, setText } from "../Utils/Writer.js";
 
 class JotsService{
     counter() {
-        let jots = Jot.counter
-        jots++
-        setText('numberJot', jots)
-        console.log("adding up them jots", Jot.counter)
+        let jotCount = appState.jots.length;
+
+        setText('numberJot', jotCount)
+
     }
 
     updateJot(updatedBody) {
         console.log("almost saved")
         let activeJotNote = appState.activeJot
-
+        // @ts-ignore
+    
         // @ts-ignore
         activeJotNote.body = updatedBody
+        activeJotNote.upTime = new Date().toLocaleTimeString('en-US') 
+        activeJotNote.upDate = new Date().toLocaleDateString('en-US')
         saveState('jots', appState.jots)
         console.log("text updated!", appState.jots)
         appState.emit('activeJot')
@@ -27,8 +30,11 @@ class JotsService{
     setActiveJot(jotId){
         let foundJot = appState.jots.find(c => c.id == jotId)
         console.log(foundJot)
+
         // @ts-ignore
         appState.activeJot = foundJot
+        
+        
     }
 
     createJot(formData){

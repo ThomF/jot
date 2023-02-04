@@ -7,15 +7,14 @@ export class Jot{
         this.id = generateId()
         this.time = data.time || new Date().toLocaleTimeString('en-US')
         this.date = data.date || new Date().toLocaleDateString('en-US')
-        this.upTime = data.upTime || new Date().toLocaleTimeString('en-US')
-        this.upDate = data.upDate || new Date().toLocaleDateString('en-US')
+        this.upTime = data.upTime || ""
+        this.upDate =  data.upDate || ""
         this.body = data.body || ''
         this.color = data.color
+        
     }
 
-    counter = {
-        jots: 0
-    }
+
 
     // SECTION templates 
 
@@ -39,7 +38,7 @@ export class Jot{
             <div class="col-3 pt-4">
                 <h1 class="mdi mdi-file" style="color: ${this.color}">${this.title}</h1>
                 <p>Created At: ${this.date}, ${this.time}</p>
-                <p>Updated At:<p id="updated"></p></p>
+                <p>Updated At:<p id="updated"> ${this.upDate}, ${this.upTime}</p></p>
             </div>
             <div class="col-8 p-4">
                 <textarea name="body" id="text" cols="74" rows="20" onblur="app.JotsController.updatedJot()">${this.body}</textarea>
@@ -50,6 +49,12 @@ export class Jot{
         </div>
         `
     }
+    get JotTimeUpdate(){
+        return/** HTML*/`
+        ${this.upDate}, ${this.upTime}
+    
+        `
+    }
 
     get updatedTime(){
         return`
@@ -57,6 +62,6 @@ export class Jot{
         `
     }
 
+    
 }
 
-Jot.counter = 0

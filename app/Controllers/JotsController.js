@@ -26,6 +26,7 @@ export class JotsController{
         _drawJotNotes()
         appState.on('jots', _drawJotNotes)
         appState.on('activeJot', _drawJotNote)
+        jotsService.counter()
     }
 
 
@@ -61,9 +62,13 @@ export class JotsController{
             let textBody = document.getElementById('text')
             // @ts-ignore
             let updatedBody = textBody.value 
+            let activeJotNote = appState.activeJot
 
             console.log('Saving ->', updatedBody)
             jotsService.updateJot(updatedBody)
+            let timeUpdate = activeJotNote.JotTimeUpdate
+            setHTML('updated', timeUpdate)
+            
             
         } catch (error) {
             console.error(error.message)
@@ -78,6 +83,7 @@ export class JotsController{
             if(!yes) { return }
 
             jotsService.deleteNote(jotId)
+            jotsService.counter()
         } catch (error) {
             Pop.error(error)
         }
