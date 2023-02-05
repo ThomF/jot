@@ -17,12 +17,19 @@ function _drawJotNote(){
     let jotNote = appState.activeJot
     setHTML('take-notes', jotNote.JotNoteTemplate)
 }
+function _drawLanding(){
+    let jotNotes = appState.jots
+    let template = ''
+    jotNotes.forEach(c => template += c.landingPageTemplate)
+    setHTML('take-notes', template)
+}
 
 
 export class JotsController{
 
 
     constructor(){
+        _drawLanding()
         _drawJotNotes()
         appState.on('jots', _drawJotNotes)
         appState.on('activeJot', _drawJotNote)
@@ -66,8 +73,8 @@ export class JotsController{
 
             console.log('Saving ->', updatedBody)
             jotsService.updateJot(updatedBody)
-            let timeUpdate = activeJotNote.JotTimeUpdate
-            setHTML('updated', timeUpdate)
+            // let timeUpdate = activeJotNote.JotTimeUpdate
+            // setHTML('updated', timeUpdate)
             
             
         } catch (error) {

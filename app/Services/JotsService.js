@@ -62,6 +62,8 @@ class JotsService{
 
     deleteNote(jotId){
         let note = appState.jots.findIndex(c => c.id == jotId)
+        let jotNotes = appState.jots
+        let template = ''
 
         if(note == -1){
             throw new Error("how did we get here")
@@ -70,6 +72,10 @@ class JotsService{
         appState.jots.splice(note, 1)
         saveState('jots', appState.jots)
         appState.emit('jots')
+
+
+        jotNotes.forEach(c => template += c.landingPageTemplate)
+    setHTML('take-notes', template)
     }
 
 

@@ -53,18 +53,16 @@ export class Jot{
         </div>
         `
     }
-    get JotTimeUpdate(){
-        return/** HTML*/`
-        ${this.upDate}, ${this.upTime}
-    
+    get landingPageTemplate(){
+        return`
+        <div class="row rounded blink" id="homeScreen">
+            <div class="col-12">
+                <img class="imgJot" src="assets/img/signature (6).png" alt="">
+            </div>
+        </div>
         `
     }
 
-    get updatedTime(){
-        return`
-        Updated At: ${this.upDate}, ${this.upTime}
-        `
-    }
 
     
 }
