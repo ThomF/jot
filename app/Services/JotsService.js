@@ -16,6 +16,7 @@ class JotsService{
         console.log("almost saved")
         let activeJotNote = appState.activeJot
         // @ts-ignore
+        // @ts-ignore
         let str = activeJotNote.body
         // @ts-ignore
     
@@ -31,6 +32,7 @@ class JotsService{
 
         let updatedBodyNoLineBreaks = updatedBody.replace("\n", " ").trim()
 
+        // @ts-ignore
         activeJotNote.word = updatedBodyNoLineBreaks.split(" ").length
 
         saveState('jots', appState.jots)
@@ -62,8 +64,7 @@ class JotsService{
 
     deleteNote(jotId){
         let note = appState.jots.findIndex(c => c.id == jotId)
-        let landingScreen = appState.jots
-        let template = ''
+        let jotNote = appState.activeJot
 
         if(note == -1){
             throw new Error("how did we get here")
@@ -73,9 +74,10 @@ class JotsService{
         saveState('jots', appState.jots)
         appState.emit('jots')
 
-
-        landingScreen.forEach(c => template += c.landingPageTemplate)
-        setHTML('take-notes', template)
+// STUB THIS IS THE ERROR
+        
+        // @ts-ignore
+        setHTML('homeScreen', jotNote.landingPageTemplate)
     }
 
 
