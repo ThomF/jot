@@ -11,7 +11,7 @@ export class Jot{
         this.upDate =  data.upDate || ""
         this.body = data.body || ''
         this.color = data.color
-        this.word = data.word || ''
+        this.word = data.word || 0
         this.character = data.character || ''
         
     }
@@ -41,6 +41,7 @@ export class Jot{
                 <h1 class="mdi mdi-file" style="color: ${this.color}">${this.title}</h1>
                 <p>Created At: ${this.date}, ${this.time}</p>
                 <p>Updated At:<p id="updated"> ${this.upDate}, ${this.upTime}</p></p>
+                <p>${this.character}, ${this.word}</p>
             </div>
             <div class="col-8 p-4">
                 <textarea name="body" id="text" cols="74" rows="20" onblur="app.JotsController.updatedJot()">${this.body}</textarea>
