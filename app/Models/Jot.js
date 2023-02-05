@@ -39,9 +39,10 @@ export class Jot{
         <div class="row rounded border border-${this.color}">
             <div class="col-3 pt-4">
                 <h1 class="mdi mdi-file" style="color: ${this.color}">${this.title}</h1>
-                <p>Created At: ${this.date}, ${this.time}</p>
-                <p>Updated At:<p id="updated"> ${this.upDate}, ${this.upTime}</p></p>
-                <p>${this.character}, ${this.word}</p>
+                <p class="fawnt">Created At: ${this.date}, ${this.time}</p>
+                <p class="fawnt">Updated At: ${this.upDate}, ${this.upTime}</p></p>
+                <p class="fawnt">Word Count: ${this.word}</p>
+                <p class="fawnt">Character Count: ${this.character}</p>
             </div>
             <div class="col-8 p-4">
                 <textarea name="body" id="text" cols="74" rows="20" onblur="app.JotsController.updatedJot()">${this.body}</textarea>
