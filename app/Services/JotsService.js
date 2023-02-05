@@ -62,7 +62,7 @@ class JotsService{
 
     deleteNote(jotId){
         let note = appState.jots.findIndex(c => c.id == jotId)
-        let jotNotes = appState.jots
+        let landingScreen = appState.jots
         let template = ''
 
         if(note == -1){
@@ -74,8 +74,8 @@ class JotsService{
         appState.emit('jots')
 
 
-        jotNotes.forEach(c => template += c.landingPageTemplate)
-    setHTML('take-notes', template)
+        landingScreen.forEach(c => template += c.landingPageTemplate)
+        setHTML('take-notes', template)
     }
 
 

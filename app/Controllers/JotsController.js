@@ -16,12 +16,14 @@ function _drawJotNotes(){
 function _drawJotNote(){
     let jotNote = appState.activeJot
     setHTML('take-notes', jotNote.JotNoteTemplate)
+    
 }
 function _drawLanding(){
     let jotNotes = appState.jots
     let template = ''
     jotNotes.forEach(c => template += c.landingPageTemplate)
     setHTML('take-notes', template)
+    
 }
 
 
