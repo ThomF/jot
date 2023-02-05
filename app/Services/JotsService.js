@@ -77,7 +77,7 @@ class JotsService{
 // STUB THIS IS THE ERROR
         
         // @ts-ignore
-        setHTML('homeScreen', jotNote.landingPageTemplate)
+        setHTML('take-notes', jotNote.landingPageTemplate)
     }
 
 

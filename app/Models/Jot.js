@@ -55,9 +55,13 @@ export class Jot{
     }
     get landingPageTemplate(){
         return`
+        <div class="col-12">
+        <div class="row rounded blink" id="homeScreen">
             <div class="col-12">
-                <img class="imgJot" src="assets/img/signature (6).png" alt="">
+            <img class="imgJot" src="assets/img/signature (6).png" alt="">
             </div>
+        </div>
+        </div>
         `
     }
 
