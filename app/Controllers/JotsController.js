@@ -22,7 +22,7 @@ function _drawLanding(){
     let jotNotes = appState.jots
     let template = ''
     jotNotes.forEach(c => template += c.landingPageTemplate)
-    setHTML('take-notes', template)
+    setHTML('homeScreen', template)
     
 }
 
@@ -31,7 +31,7 @@ export class JotsController{
 
 
     constructor(){
-        _drawLanding()
+        // _drawLanding()
         _drawJotNotes()
         appState.on('jots', _drawJotNotes)
         appState.on('activeJot', _drawJotNote)
