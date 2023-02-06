@@ -36,7 +36,7 @@ export class Jot{
 
     get JotNoteTemplate(){
         return/** HTML*/`
-        <div class="row rounded border border-${this.color}">
+        <div class="row rounded border bg-Jot">
             <div class="col-3 pt-4">
                 <h1 class="mdi mdi-file" style="color: ${this.color}">${this.title}</h1>
                 <p class="fawnt">Created At: ${this.date}, ${this.time}</p>
