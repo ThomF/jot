@@ -55,7 +55,7 @@ class JotsService{
         let newJot = new Jot(formData)
         console.log(newJot, 'adding it!')
         // @ts-ignore
-        Pop.toast("success", "top", 3000)
+        Pop.toast("success")
         appState.jots.push(newJot)
         saveState('jots', appState.jots)
         appState.emit('jots')
