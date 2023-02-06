@@ -22,7 +22,7 @@ export class Jot{
 
     get JotFileTemplate(){
         return /** HTML*/`
-        <div class="row" onclick="app.JotsController.setActiveJot('${this.id}')">
+        <div class="row" onclick="app.JotsController.setActiveJot('${this.id}')" data-bs-dismiss="offcanvas">
         <div class="col-6 d-flex">
             <h2>${this.title}</h2>
             <h4 class="mdi mdi-file" style="color: ${this.color}"></h4>
@@ -36,7 +36,7 @@ export class Jot{
 
     get JotNoteTemplate(){
         return/** HTML*/`
-        <div class="row rounded border border-${this.color}">
+        <div class="row rounded border bg-jot">
             <div class="col-3 pt-4">
                 <h1 class="mdi mdi-file" style="color: ${this.color}">${this.title}</h1>
                 <p class="fawnt">Created At: ${this.date}, ${this.time}</p>
