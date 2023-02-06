@@ -55,7 +55,7 @@ class JotsService{
         let newJot = new Jot(formData)
         console.log(newJot, 'adding it!')
         // @ts-ignore
-        Pop.toast("success")
+        Pop.toast('New Jot Added!', 'success', 'top' , 3000, true)
         appState.jots.push(newJot)
         saveState('jots', appState.jots)
         appState.emit('jots')
@@ -74,7 +74,9 @@ class JotsService{
         saveState('jots', appState.jots)
         appState.emit('jots')
 
-// STUB THIS IS THE ERROR
+        Pop.toast('Jot Exiled', 'info', 'top' , 3000, true)
+
+// STUB THIS IS THE screen reset
         
         // @ts-ignore
         setHTML('take-notes', jotNote.landingPageTemplate)
